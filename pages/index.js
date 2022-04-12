@@ -24,7 +24,7 @@ export default function Home() {
             </Link>
           </div>
           <div className={styles.blog_link}>
-            <Link href="/blog">
+            <Link href="/blog/sample">
               <a>Blog</a>
             </Link>
           </div>
