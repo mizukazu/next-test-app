@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link';
+import Link from '@mui/material/Link';
+import Container from '@mui/material/Container';
 
 export default function Home() {
   return (
@@ -17,18 +18,16 @@ export default function Home() {
           Next.jsテストサイト
         </h1>
 
-        <div className={styles.link_area}>
-          <div className={styles.about_link}>
-            <Link href="/about">
-              <a>About</a>
-            </Link>
+        <Container>
+          <div className={styles.link_area}>
+            <div className={styles.about_link}>
+              <Link href="/test">テストページ</Link>
+            </div>
+            <div className={styles.blog_link}>
+              <Link href="/blog/sample">Blog</Link>
+            </div>
           </div>
-          <div className={styles.blog_link}>
-            <Link href="/blog/sample">
-              <a>Blog</a>
-            </Link>
-          </div>
-        </div>
+        </Container>
       </main>
 
       <footer className={styles.footer}>
