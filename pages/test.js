@@ -1,8 +1,8 @@
 import React from 'react';
-import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import AlertDialog from '../components/Dialog';
+import ToTop from '../components/ToTop';
 
 export default function TestPage() {
 
@@ -36,11 +36,5 @@ function CountComponent() {
 function RenderButton() {
   return (
     <Button variant="contained">Hello World!</Button>
-  )
-}
-
-function ToTop() {
-  return (
-    <Link href="/">ホームに戻る</Link>
   )
 }

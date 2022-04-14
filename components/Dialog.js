@@ -1,11 +1,5 @@
 import React from 'react';
-import { Button, Dialog, DialogTitle, DialogContent } from '@mui/material';
-
-function DialogButton() {
-  return (
-    <Button variant="contained" color="primary">開く</Button>
-  )
-}
+import { Button, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions  } from '@mui/material';
 
 export default function AlertDialog() {
   const [isOpen, setOpen] = React.useState(false);
@@ -25,9 +19,20 @@ export default function AlertDialog() {
       open={ isOpen }
       onClose={ dialogClose }
       aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
       >
         <DialogTitle>テストダイアログ</DialogTitle>
-        <DialogContent>test</DialogContent>
+        <DialogContent>
+          <DialogContentText>
+          吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+          吾輩はここで始めて人間というものを見た。
+          しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。
+          しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せら
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={ dialogClose }>閉じる</Button>
+        </DialogActions>
       </Dialog>
     </div>
   )

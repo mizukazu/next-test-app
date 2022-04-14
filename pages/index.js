@@ -24,23 +24,20 @@ export default function Home() {
               <Link href="/test">テストページ</Link>
             </div>
             <div className={styles.blog_link}>
-              <Link href="/blog/sample">Blog</Link>
+              <Link href="/blog">Blog</Link>
+            </div>
+            <div className={styles.blog_link}>
+              <Link href="/apiTest">API</Link>
+            </div>
+            <div className={styles.blog_link}>
+              <Link href="/indexedDB">IndexedDB</Link>
             </div>
           </div>
         </Container>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        Powered by Mizukazu
       </footer>
     </div>
   )
