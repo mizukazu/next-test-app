@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from '@mui/material/Link';
-import Container from '@mui/material/Container';
+import { Container, Grid } from '@mui/material';
 
 export default function Home() {
   return (
@@ -19,20 +18,20 @@ export default function Home() {
         </h1>
 
         <Container>
-          <div className={styles.link_area}>
-            <div className={styles.about_link}>
+          <Grid container spacing={2} className={styles.link_area}>
+            <Grid item md={3} className={styles.about_link}>
               <Link href="/test">テストページ</Link>
-            </div>
-            <div className={styles.blog_link}>
+            </Grid>
+            <Grid item md={1} className={styles.blog_link}>
               <Link href="/blog">Blog</Link>
-            </div>
-            <div className={styles.blog_link}>
+            </Grid>
+            <Grid item md={1} className={styles.blog_link}>
               <Link href="/apiTest">API</Link>
-            </div>
-            <div className={styles.blog_link}>
+            </Grid>
+            <Grid item md={3} className={styles.blog_link}>
               <Link href="/indexedDB">IndexedDB</Link>
-            </div>
-          </div>
+            </Grid>
+          </Grid>
         </Container>
       </main>
 
