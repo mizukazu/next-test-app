@@ -1,21 +1,31 @@
-import Container from '@mui/material/Container';
+import React, { useState } from 'react';
+import { Container, Grid } from '@mui/material';
 import ToTop from '../components/ToTop';
 import QRcode from 'qrcode.react';
 import { useQRCode } from 'next-qrcode';
+import { QrReader } from 'react-qr-reader';
 
 export default function qrcode() {
   return (
     <Container>
-      <h1>QRコードテストページ</h1>
-      <ToTop></ToTop>
       <div>
-        <h3>qrcode.react</h3>
-        { QrcodeSVG() }
-        <p>Qiita.comに飛びます</p>
+        <h2>QRコード生成</h2>
+        <ToTop></ToTop>
+          <Grid container>
+            <Grid item md={2}>
+              <h3>qrcode.react</h3>
+              { QrcodeSVG() }
+              <p>Qiita.comに飛びます</p>
+            </Grid>
+            <Grid item md={2}>
+            <h3>next-qrcode</h3>
+              { NextQRcode() }
+            </Grid>
+          </Grid>
       </div>
       <div>
-      <h3>next-qrcode</h3>
-        { NextQRcode() }
+        <h2>QRコード読み取り</h2>
+        { ReactQRReader() }
       </div>
     </Container>
   )
@@ -46,5 +56,30 @@ function NextQRcode() {
         },
       }}
     />
+  )
+}
+
+function ReactQRReader() {
+  const [data, setData] = useState('No result');
+  return (
+    <>
+      <QrReader
+        onResult={(result, error) => {
+          if (!!result) {
+            setData(result?.text);
+          }
+
+          if (!!error) {
+            console.info(error);
+          }
+        }}
+        constraints={{
+          facingMode: 'user'
+        }}
+        style={{ width: '100%' }}
+      >
+      </QrReader>
+      <p>{data}</p>
+    </>
   )
 }
