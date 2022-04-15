@@ -19,17 +19,22 @@ export default function Home() {
 
         <Container>
           <Grid container spacing={2} className={styles.link_area}>
-            <Grid item md={3} className={styles.about_link}>
+            <Grid item md={4} className={styles.about_link}>
               <Link href="/test">テストページ</Link>
             </Grid>
-            <Grid item md={1} className={styles.blog_link}>
+            <Grid item md={3} className={styles.blog_link}>
               <Link href="/blog">Blog</Link>
             </Grid>
-            <Grid item md={1} className={styles.blog_link}>
+            <Grid item md={2} className={styles.blog_link}>
               <Link href="/apiTest">API</Link>
             </Grid>
             <Grid item md={3} className={styles.blog_link}>
               <Link href="/indexedDB">IndexedDB</Link>
+            </Grid>
+          </Grid>
+          <Grid container spacing={2} className={styles.link_area}>
+            <Grid item md={4} className={styles.about_link}>
+              <Link href="/qrcode">QRコードテスト</Link>
             </Grid>
           </Grid>
         </Container>
