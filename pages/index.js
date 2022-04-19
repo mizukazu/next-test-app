@@ -13,7 +13,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        {/* <h1 className={styles.title}>
+          Next.jsテストサイト
+        </h1> */}
+
+        <h1 className='test mb-5'>
           Next.jsテストサイト
         </h1>
 
@@ -35,6 +39,9 @@ export default function Home() {
           <Grid container spacing={2} className={styles.link_area}>
             <Grid item md={4} className={styles.about_link}>
               <Link href="/qrcode">QRコードテスト</Link>
+            </Grid>
+            <Grid item md={4} className={styles.about_link}>
+              <Link href="/antdesign">AntDesignテスト</Link>
             </Grid>
           </Grid>
         </Container>
