@@ -4,7 +4,7 @@ import { Row, Col } from 'antd';
 import { DatePicker, Button, Divider } from 'antd';
 import { Form, Input, Checkbox } from 'antd';
 import 'antd/dist/antd.css';
-import 'tailwindcss/tailwind.css';
+// import 'tailwindcss/tailwind.css';
 
 export default function AntDesign() {
   return (
@@ -26,6 +26,13 @@ export default function AntDesign() {
       <div style={{ marginTop: 32 }}>
         <h2 className="mb-3">Form</h2>
         { BasicForm() }
+      </div>
+      <div style={{ marginTop: 32 }}>
+        <ul>
+          <li>sample1</li>
+          <li>sample2</li>
+          <li>sample3</li>
+        </ul>
       </div>
     </Container>
   )
