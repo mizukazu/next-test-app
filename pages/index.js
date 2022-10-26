@@ -2,8 +2,26 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from '@mui/material/Link';
 import { Container, Grid } from '@mui/material';
+import { useCallback, useMemo } from 'react';
+import { ReactDraftWysiwyg } from '../components/ReactDraftWysiwyg';
 
 export default function Home() {
+  const a = 10;
+  const b = 5;
+
+  /** 結果の値を返す */
+  const sampleFuncMemo = useMemo(() => {
+    return a + b;
+  },[a, b])
+
+  /** 関数を返す */
+  const sampleFuncCallback = useCallback(() => {
+    return a + b;
+  },[a, b])
+
+  const AddResult = () => (<div>計算結果: {sampleFuncCallback()}</div>)
+
+  console.log(sampleFuncMemo);
   return (
     <div className={styles.container}>
       <Head>
@@ -43,6 +61,12 @@ export default function Home() {
             <Grid item md={4} className={styles.about_link}>
               <Link href="/antdesign">AntDesignテスト</Link>
             </Grid>
+          </Grid>
+          <Grid container spacing={2} className={styles.link_area} style={{marginTop: 60}}>
+            <AddResult />
+          </Grid>
+          <Grid container spacing={2} className={styles.link_area} style={{marginTop: 60}}>
+            <ReactDraftWysiwyg />
           </Grid>
         </Container>
       </main>
